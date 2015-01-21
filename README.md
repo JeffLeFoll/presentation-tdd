@@ -14,3 +14,5 @@ http://programmer.97things.oreilly.com/wiki/index.php/The_Three_Laws_of_Test-Dri
 https://groups.yahoo.com/neo/groups/extremeprogramming/conversations/topics/111829
 
 http://www.jamesshore.com/Blog/What-Does-a-Good-Test-Suite-Look-Like.html
+
+http://arlobelshee.com/what-makes-a-good-test-suite/
