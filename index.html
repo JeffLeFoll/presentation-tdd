@@ -47,10 +47,6 @@
 					<p>
 						<small> <a href="http://jefflefoll.github.io">Jean-François Le Foll</a> / <a href="http://twitter.com/JeffLeFoll">@JeffLeFoll</a></small>
 					</p>
-
-					<aside class="notes">
-							This slide has fragments which are also stepped through in the notes window.
-					</aside>
 				</section>
 
 				<section>
@@ -60,203 +56,57 @@
 
 					<section id="fragments">
 						<h2>Définition d'un bon test unitaire (James Shore)</h2>
-						<p class="fragment">S'execute rapidement</p>
+						<p class="fragment">S’exécute rapidement</p>
 						<p class="fragment">Fournis une ceinture de sécurité pour le refactoring</p>
 						<p class="fragment">Documente le but du code (c'est une spec)</p>
-						<p class="fragment">Alerte l'équipe des régression</p>
+						<p class="fragment">Alerte l'équipe des régressions</p>
 					</section>
 
 					<section id="fragments">
-						<h2> Un bon test suit la régle F.I.R.S.T :</h2>
-						<p class="fragment">Fast</p>
-						<p class="fragment">Independant</p>
-						<p class="fragment">Repeatable</p>
-						<p class="fragment">Self-validating</p>
-						<p class="fragment">Timely</p>
+						<h2> Un bon test suit la règle F.I.R.S.T :</h2>
+						<p align="left">Fast </br>
+						Independant </br>
+						Repeatable </br>
+						Self-validating </br>
+						Timely </br></p>
 					</section>
-
 				</section>
 
-				<!-- Example of nested vertical slides -->
 				<section>
-					<section>
-						<h2>Vertical Slides</h2>
-						<p>
-							Slides can be nested inside of other slides,
-							try pressing <a href="#" class="navigate-down">down</a>.
+					<h2>Le TDD ?</h2>
+					<p>
+						Une discipline qui permet de faire émerger le design et l'implémentation du code en utilisant les tests unitaires. </br>
+						Il y a 3 règles simples :
+					</p>
+					<blockquote cite="http://programmer.97things.oreilly.com/wiki/index.php/The_Three_Laws_of_Test-Driven_Development">
+						&ldquo;Vous ne pouvez pas écrire de code de production sans avoir d'abord écrit un test unitaire en échec.&rdquo; </br>
+					</blockquote>
+					<blockquote cite="http://programmer.97things.oreilly.com/wiki/index.php/The_Three_Laws_of_Test-Driven_Development">
+						&ldquo;Vous ne pouvez pas écrire plus de ligne de test qu'il ne faut pour échouer. Ne pas compiler est échouer.&rdquo; </br>
+					</blockquote>
+					<blockquote cite="http://programmer.97things.oreilly.com/wiki/index.php/The_Three_Laws_of_Test-Driven_Development">
+						&ldquo;Vous ne pouvez pas écrire plus de code de production qu'il ne faut pour faire passer avec succes le test.&rdquo; </br>
+					</blockquote>
+				</section>
+
+				<section>
+					<p align="center">
+						Et avec un peut de hauteur ? </br>
+						<img src="./images/red_green_refactor.jpg" alt="Red => Green => Refacto">
+						<p align="left">
+							1) Créer un test en échec </br>
+							2) Écrire le code de production qui le fait passer </br>
+							3) Nettoyer le bordel que le viens de faire :) </br>
 						</p>
-						<a href="#" class="image navigate-down">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 1</h2>
-						<p>Press down or up to navigate.</p>
-					</section>
-					<section>
-						<h2>Basement Level 2</h2>
-						<p>Cornify</p>
-						<a class="test" href="http://cornify.com">
-							<img width="280" height="326" src="https://s3.amazonaws.com/hakim-static/reveal-js/cornify.gif" alt="Unicorn">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 3</h2>
-						<p>That's it, time to go back up.</p>
-						<a href="#/2" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
-						</a>
-					</section>
+					</p>
+
 				</section>
 
 				<section>
-					<h2>Slides</h2>
-					<p>
-						Not a coder? No problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slid.es" target="_blank">http://slid.es</a>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Point of View</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview.
-					</p>
-					<p>
-						Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-					</p>
-				</section>
-
-				<section>
-					<h2>Works in Mobile Safari</h2>
-					<p>
-						Try it out! You can swipe through the slides and pinch your way to the overview.
-					</p>
-				</section>
-
-				<section>
-					<h2>Marvelous Unordered List</h2>
-					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
-				</section>
-
-				<section data-markdown>
-					<script type="text/template">
-						## Markdown support
-
-						For those of you who like that sort of thing. Instructions and a bit more info available [here](https://github.com/hakimel/reveal.js#markdown).
-
-						```
-						<section data-markdown>
-						  ## Markdown support
-
-						  For those of you who like that sort of thing.
-						  Instructions and a bit more info available [here](https://github.com/hakimel/reveal.js#markdown).
-						</section>
-						```
-					</script>
-				</section>
-
-				<section id="transitions">
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=cube#/transitions">Cube</a> -
-						<a href="?transition=page#/transitions">Page</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a> -
-						<a href="?transition=linear#/transitions">Linear</a> -
-						<a href="?transition=fade#/transitions">Fade</a> -
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?#/transitions">Default</a>
-					</p>
-				</section>
-
-				<section id="themes">
-					<h2>Themes</h2>
-					<p>
-						Reveal.js comes with a few themes built in: <br>
-						<a href="?#/themes">Default</a> -
-						<a href="?theme=sky#/themes">Sky</a> -
-						<a href="?theme=beige#/themes">Beige</a> -
-						<a href="?theme=simple#/themes">Simple</a> -
-						<a href="?theme=serif#/themes">Serif</a> -
-						<a href="?theme=night#/themes">Night</a> <br>
-						<a href="?theme=moon#/themes">Moon</a> -
-						<a href="?theme=solarized#/themes">Solarized</a>
-					</p>
-					<p>
-						<small>
-							* Theme demos are loaded after the presentation which leads to flicker. In production you should load your theme in the <code>&lt;head&gt;</code> using a <code>&lt;link&gt;</code>.
-						</small>
-					</p>
-				</section>
-
-				<section>
-					<h2>Global State</h2>
-					<p>
-						Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-						will be added as a class to the document element when the slide is open. This lets you
-						apply broader style changes, like switching the background.
-					</p>
-				</section>
-
-				<section data-state="customevent">
-					<h2>Custom Events</h2>
-					<p>
-						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-					</p>
-					<pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
-Reveal.addEventListener( 'customevent', function() {
-	console.log( '"customevent" has fired' );
-} );
-					</code></pre>
-				</section>
-
-				<section>
-					<section data-background="#007777">
-						<h2>Slide Backgrounds</h2>
-						<p>
-							Set <code>data-background="#007777"</code> on a slide to change the full page background to the given color. All CSS color formats are supported.
-						</p>
-						<a href="#" class="image navigate-down">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png">
-						<h2>Image Backgrounds</h2>
-						<pre><code>&lt;section data-background="image.png"&gt;</code></pre>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" data-background-repeat="repeat" data-background-size="100px">
-						<h2>Repeated Image Backgrounds</h2>
-						<pre><code style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
-					</section>
-				</section>
-
-				<section data-transition="linear" data-background="#4d7e65" data-background-transition="slide">
-					<h2>Background Transitions</h2>
-					<p>
-						Pass reveal.js the <code>backgroundTransition: 'slide'</code> config argument to make backgrounds slide rather than fade.
-					</p>
-				</section>
-
-				<section data-transition="linear" data-background="#8c4738" data-background-transition="slide">
-					<h2>Background Transition Override</h2>
-					<p>
-						You can override background transitions per slide by using <code>data-background-transition="slide"</code>.
-					</p>
+						<blockquote>
+							Make it work. Make it right. Make it fast.
+						</blockquote>
+						 <i> Kent Beck </i>
 				</section>
 
 				<section>
