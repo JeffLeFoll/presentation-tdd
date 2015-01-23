@@ -16,3 +16,7 @@ https://groups.yahoo.com/neo/groups/extremeprogramming/conversations/topics/1118
 http://www.jamesshore.com/Blog/What-Does-a-Good-Test-Suite-Look-Like.html
 
 http://arlobelshee.com/what-makes-a-good-test-suite/
+
+http://stackoverflow.com/questions/18024785/tdd-first-principle
+
+https://pragprog.com/magazines/2012-01/unit-tests-are-first
