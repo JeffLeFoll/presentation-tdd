@@ -74,31 +74,37 @@
 					<section id="fragments">
 						<h3>Fast</h3>
 						<pre><code data-trim class="java">
-public class TraitementDiversTest {
+public class AgrégateurDeDonnéesTest {
     @Test
     public void ceciEstUnTrèsMauvaisTest(){
         SQLAccèsDonnésDAO accèsDonnées = new SQLAccèsDonnésDAO();
-        String nomFichier = "comptes à vue";
-        DonnesBDD donnéesFichier = accèsDonnées.récupérerDonnées(nomFichier);
-        System.out.println(donnéesFichier.getNumeroDeCompte());
+        String idCompte = "1230948";
+        DonnesBDD donnéesFichier = accèsDonnées.récupérerDonnées(idCompte);
+        AgrégateurDeDonnées agregateur = new AgrégateurDeDonnées();
+        Compte compte = agregateur.traiterDonnées(donnéesFichier);
+        System.out.println(compte.getTitulaire());
     }
 }
 						</code></pre>
 
 						<pre><code data-trim class="java">
-public class TraitementDiversTest {
-    @Mock
-    SQLAccèsDonnésDAO accèsDonnées;
-
+public class AgrégateurDeDonnéesTest {
     @Test
     public void ceciEstUnTestFast(){
-        String nomFichier = "comptes à vue";
-        when(accèsDonnées.récupérerDonnées(nomFichier))
-        			 .thenReturn(unJeuDeDonneesUtileACeTest());
+        String idCompte = "1230948";
+        DonnesBDD données = unJeuDeDonneesUtileACeTest(idCompte);
 
-        DonnesBDD données = accèsDonnées.récupérerDonnées(nomFichier);
+        AgrégateurDeDonnées agrégateur = new AgrégateurDeDonnées();
+        Compte compte = agrégateur.traiterDonnées(données);
 
-        assertThat(données.getNumeroDeCompte()).isEqualTo("1230948");
+        assertThat(compte.getTitulaire()).isEqualTo("Harry Cover");
+    }
+
+    private DonnesBDD unJeuDeDonneesUtileACeTest(String idCompte) {
+        DonnesBDD données = new DonnesBDD(idCompte);
+        données.setNom("Cover");
+        données.setPrenom("Harry");
+        return données;
     }
 }
 						</code></pre>
