@@ -73,12 +73,34 @@
 
 					<section id="fragments">
 						<h3>Fast</h3>
-						<pre><code data-trim contenteditable>
-							cbon code
+						<pre><code data-trim class="java">
+public class TraitementDiversTest {
+    @Test
+    public void ceciEstUnTrèsMauvaisTest(){
+        SQLAccèsDonnésDAO accèsDonnées = new SQLAccèsDonnésDAO();
+        String nomFichier = "comptes à vue";
+        DonnesBDD donnéesFichier = accèsDonnées.récupérerDonnées(nomFichier);
+        System.out.println(donnéesFichier.getNumeroDeCompte());
+    }
+}
 						</code></pre>
 
-						<p class="fragment"><pre><code data-trim contenteditable>
-							mauvais code
+						<pre><code data-trim class="java">
+public class TraitementDiversTest {
+    @Mock
+    SQLAccèsDonnésDAO accèsDonnées;
+
+    @Test
+    public void ceciEstUnTestFast(){
+        String nomFichier = "comptes à vue";
+        when(accèsDonnées.récupérerDonnées(nomFichier))
+        			 .thenReturn(unJeuDeDonneesUtileACeTest());
+
+        DonnesBDD données = accèsDonnées.récupérerDonnées(nomFichier);
+
+        assertThat(données.getNumeroDeCompte()).isEqualTo("1230948");
+    }
+}
 						</code></pre>
 						
 					</section>
