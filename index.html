@@ -73,10 +73,10 @@
 
 					<section id="fragments">
 						<h3>Fast</h3>
-						<pre><code data-trim class="java">
+						<pre><code data-trim contenteditable class="java">
 public class AgrégateurDeDonnéesTest {
     @Test
-    public void ceciEstUnTrèsMauvaisTest(){
+    public void ceciEstUnTestQuiNEstPasFast(){
         SQLAccèsDonnésDAO accèsDonnées = new SQLAccèsDonnésDAO();
         String idCompte = "1230948";
         DonnesBDD donnéesFichier = accèsDonnées.récupérerDonnées(idCompte);
@@ -87,7 +87,7 @@ public class AgrégateurDeDonnéesTest {
 }
 						</code></pre>
 
-						<pre><code data-trim class="java">
+						<pre><code data-trim contenteditable class="java">
 public class AgrégateurDeDonnéesTest {
     @Test
     public void ceciEstUnTestFast(){
@@ -113,22 +113,63 @@ public class AgrégateurDeDonnéesTest {
 
 					<section id="fragments">
 						<h3>Independant</h3>
-						exemple mauvais </br> exemple bon
+						<pre><code data-trim contenteditable class="java">
+public class CompteTest {
+    @Test
+    public void ceciEstUnTestQuiNEstPasIndependant(){
+        Compte compte = new Compte();
+        compte.ajouter(1000);
+        assertThat(compte.getSolde()).isEqualTo(1500);
+
+        compte.setCotitulaire("John Doe");
+        assertThat(compte.aUnCotitulaire()).isTrue();
+    }
+}
+						</code></pre>
+						<pre><code data-trim contenteditable class="java">
+ public class CompteTest {
+    @Test
+    public void ceciEstUnTestIndependantSurLeSolde() {
+        Compte compte = new Compte();
+        
+        compte.ajouter(1000);
+        
+        assertThat(compte.getSolde()).isEqualTo(1500);
+    }
+    @Test 
+    public void ceciEstUnTestIndependantSurLeCotitulaire(){
+        Compte compte = new Compte();
+        
+        compte.setCotitulaire("John Doe");
+        
+        assertThat(compte.aUnCotitulaire()).isTrue();
+    }					
+}		
+						</code></pre>
 					</section>
 
 					<section id="fragments">
 						<h3>Repeatable</h3>
-						exemple mauvais </br> exemple bon
+						<pre><code data-trim contenteditable class="java">
+						</code></pre>
+						<pre><code data-trim contenteditable class="java">
+						</code></pre>
 					</section>
 
 					<section id="fragments">
 						<h3>Self-validating</h3>
-						exemple mauvais </br> exemple bon
+						<pre><code data-trim contenteditable class="java">
+						</code></pre>
+						<pre><code data-trim contenteditable class="java">
+						</code></pre>
 					</section>
 
 					<section id="fragments">
 						<h3>Timely</h3>
-						exemple mauvais </br> exemple bon
+						<pre><code data-trim contenteditable class="java">
+						</code></pre>
+						<pre><code data-trim contenteditable class="java">
+						</code></pre>
 					</section>
 				</section>
 
