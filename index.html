@@ -80,8 +80,8 @@ public class AgrégateurDeDonnéesTest {
         SQLAccèsDonnésDAO accèsDonnées = new SQLAccèsDonnésDAO();
         String idCompte = "1230948";
         DonnesBDD donnéesFichier = accèsDonnées.récupérerDonnées(idCompte);
-        AgrégateurDeDonnées agregateur = new AgrégateurDeDonnées();
-        Compte compte = agregateur.traiterDonnées(donnéesFichier);
+        AgrégateurDeDonnées agrégateur = new AgrégateurDeDonnées();
+        Compte compte = agrégateur.traiterDonnées(donnéesFichier);
         System.out.println(compte.getTitulaire());
     }
 }
@@ -185,8 +185,8 @@ public class AgrégateurDeDonnéesTest {
         SQLAccèsDonnésDAO accèsDonnées = new SQLAccèsDonnésDAO();
         String idCompte = "1230948";
         DonnesBDD donnéesFichier = accèsDonnées.récupérerDonnées(idCompte);
-        AgrégateurDeDonnées agregateur = new AgrégateurDeDonnées();
-        Compte compte = agregateur.traiterDonnées(donnéesFichier);
+        AgrégateurDeDonnées agrégateur = new AgrégateurDeDonnées();
+        Compte compte = agrégateur.traiterDonnées(donnéesFichier);
         System.out.println(compte.getTitulaire());
     }
 }
@@ -217,9 +217,25 @@ public class AgrégateurDeDonnéesTest {
 					<section id="fragments">
 						<h3>Timely</h3>
 						<p>
+							Les tests doivent être écrit juste avant le code de production qui les fait passer. </br>
+							Autrement, vous trouverez que le code sera difficile à tester, voir trop dur à tester et que vous perdez votre temps. </br>
+							Votre code ne sera pas conçut pour être testable. </br>
+							De plus écrire les tests après le code est souvent moins fun, plus frustrant et moins productif que des les écrire juste avant.  </br>
 						</p>
-						</code></pre>
 					</section>
+				</section>
+
+				<section>
+					<p>
+						Des tests écrit avant le code de production sont des <b>Spécifications par l’exemple</b>. </br>
+						Ils vont permettre à tous le monde de comprendre rapidement le but du code. </br>
+						Les tests sont tout aussi important que le code de production car ils en assurent sa flexibilité, sa maintenabilité et sa réutilisabilité. </br>
+					</p>
+					</br>
+					<blockquote cite="Uncle bob : Clean Code">
+						&ldquo;Si vous laissez pourrir vos tests, alors votre code pourrira aussi. Gardez vos tests propre.&rdquo; </br>
+					</blockquote>
+						<i> Robert C. Martin - Clean Code </i>
 				</section>
 
 				<section>
@@ -261,27 +277,6 @@ public class AgrégateurDeDonnéesTest {
 
 				<section>
 
-				</section>
-
-				<section>
-					<h2>Pretty Code</h2>
-					<pre><code data-trim contenteditable>
-							function linkify( selector ) {
-							  if( supports3DTransforms ) {
-
-							    var nodes = document.querySelectorAll( selector );
-
-							    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-							      var node = nodes[i];
-
-							      if( !node.className ) {
-							        node.className += ' roll';
-							      }
-							    }
-							  }
-							}
-					</code></pre>
-					<p>Courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
 				</section>
 
 				<section>
