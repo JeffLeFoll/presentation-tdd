@@ -151,8 +151,30 @@ public class CompteTest {
 					<section id="fragments">
 						<h3>Repeatable</h3>
 						<pre><code data-trim contenteditable class="java">
+public class CompteTest {							
+    @Test
+    public void ceciEstUnTestNonRépétable(){
+      Compte compte = new Compte();
+      compte.setDateOuverture(new Date());
+
+      assertThat(compte.getDateOuverture()).isEqualTo(new Date());
+    }
+}
 						</code></pre>
 						<pre><code data-trim contenteditable class="java">
+ public class CompteTest {
+    @Test
+    public void ceciEstUnTestRépétable(){
+      String format = "dd/MM/yyyy";
+      String date = "25/01/2015";
+      DateTimeFormatter formateur = DateTimeFormat.forPattern(format);
+
+      Compte compte = new Compte();
+      compte.setDateOuverture(DateTime.parse(date, formateur));
+
+      assertThat(compte.getDateOuverture().toString(format)).isEqualTo(date);
+    }
+}						
 						</code></pre>
 					</section>
 
