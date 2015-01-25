@@ -86,7 +86,6 @@ public class AgrégateurDeDonnéesTest {
     }
 }
 						</code></pre>
-
 						<pre><code data-trim contenteditable class="java">
 public class AgrégateurDeDonnéesTest {
     @Test
@@ -108,7 +107,6 @@ public class AgrégateurDeDonnéesTest {
     }
 }
 						</code></pre>
-						
 					</section>
 
 					<section id="fragments">
@@ -181,16 +179,45 @@ public class CompteTest {
 					<section id="fragments">
 						<h3>Self-validating</h3>
 						<pre><code data-trim contenteditable class="java">
+public class AgrégateurDeDonnéesTest {
+    @Test
+    public void ceciEstUnTestQuiNEstPasAutoValidant(){
+        SQLAccèsDonnésDAO accèsDonnées = new SQLAccèsDonnésDAO();
+        String idCompte = "1230948";
+        DonnesBDD donnéesFichier = accèsDonnées.récupérerDonnées(idCompte);
+        AgrégateurDeDonnées agregateur = new AgrégateurDeDonnées();
+        Compte compte = agregateur.traiterDonnées(donnéesFichier);
+        System.out.println(compte.getTitulaire());
+    }
+}
 						</code></pre>
 						<pre><code data-trim contenteditable class="java">
+public class AgrégateurDeDonnéesTest {
+    @Test
+    public void ceciEstUnTestAutoValidant(){
+        String idCompte = "1230948";
+        DonnesBDD données = unJeuDeDonneesUtileACeTest(idCompte);
+
+        AgrégateurDeDonnées agrégateur = new AgrégateurDeDonnées();
+        Compte compte = agrégateur.traiterDonnées(données);
+
+        assertThat(compte.getTitulaire()).isEqualTo("Harry Cover");
+    }
+
+    private DonnesBDD unJeuDeDonneesUtileACeTest(String idCompte) {
+        DonnesBDD données = new DonnesBDD(idCompte);
+        données.setNom("Cover");
+        données.setPrenom("Harry");
+        return données;
+    }
+}
 						</code></pre>
 					</section>
 
 					<section id="fragments">
 						<h3>Timely</h3>
-						<pre><code data-trim contenteditable class="java">
-						</code></pre>
-						<pre><code data-trim contenteditable class="java">
+						<p>
+						</p>
 						</code></pre>
 					</section>
 				</section>
