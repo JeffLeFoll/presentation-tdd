@@ -50,7 +50,7 @@
 				</section>
 
 				<section>
-					<section id="fragments">
+					<section>
 						<h2>Définition d'un bon test unitaire (James Shore)</h2>
 						<p class="fragment">S’exécute rapidement</p>
 						<p class="fragment">Fournis une ceinture de sécurité pour le refactoring</p>
@@ -60,7 +60,7 @@
 				</section>
 
 				<section>
-					<section id="fragments">
+					<section>
 						<h2>Une règle à suivre : F.I.R.S.T</h2>
 						<ul>
 							<li>Fast</li>
@@ -71,7 +71,7 @@
 						</ul>
 					</section>
 
-					<section id="fragments">
+					<section>
 						<h3>Fast</h3>
 						<pre><code data-trim contenteditable class="java">
 public class AgrégateurDeDonnéesTest {
@@ -109,7 +109,7 @@ public class AgrégateurDeDonnéesTest {
 						</code></pre>
 					</section>
 
-					<section id="fragments">
+					<section>
 						<h3>Independant</h3>
 						<pre><code data-trim contenteditable class="java">
 public class CompteTest {
@@ -146,7 +146,7 @@ public class CompteTest {
 						</code></pre>
 					</section>
 
-					<section id="fragments">
+					<section>
 						<h3>Repeatable</h3>
 						<pre><code data-trim contenteditable class="java">
 public class CompteTest {							
@@ -176,7 +176,7 @@ public class CompteTest {
 						</code></pre>
 					</section>
 
-					<section id="fragments">
+					<section>
 						<h3>Self-validating</h3>
 						<pre><code data-trim contenteditable class="java">
 public class AgrégateurDeDonnéesTest {
@@ -214,7 +214,7 @@ public class AgrégateurDeDonnéesTest {
 						</code></pre>
 					</section>
 
-					<section id="fragments">
+					<section>
 						<h3>Timely</h3>
 						<p>
 							Les tests doivent être écrit juste avant le code de production qui les fait passer. </br>
@@ -276,6 +276,54 @@ public class AgrégateurDeDonnéesTest {
 						 <i> Kent Beck </i>
 				</section>
 
+					
+				<section>
+					<section>
+						<h3>Make it work</h3>
+					</section>
+					<section>
+						<p>Le test</p>
+						<pre><code data-trim contenteditable class="java">
+public class AgrégateurDeDonnéesTest {
+    @Test
+    public void ceciEstUnTestAutoValidant(){
+        String idCompte = "1230948";
+        DonnesBDD données = unJeuDeDonneesUtileACeTest(idCompte);
+
+        AgrégateurDeDonnées agrégateur = new AgrégateurDeDonnées();
+        Compte compte = agrégateur.traiterDonnées(données);
+
+        assertThat(compte.getTitulaire()).isEqualTo("Harry Cover");
+    }
+}
+
+						</code></pre>
+					</section>
+					<section>
+						<p>L'implémentation</p>
+						<pre><code data-trim contenteditable class="java">
+public class AgrégateurDeDonnéesTest {
+    @Test
+    public void ceciEstUnTestAutoValidant(){
+        String idCompte = "1230948";
+        DonnesBDD données = unJeuDeDonneesUtileACeTest(idCompte);
+
+        AgrégateurDeDonnées agrégateur = new AgrégateurDeDonnées();
+        Compte compte = agrégateur.traiterDonnées(données);
+
+        assertThat(compte.getTitulaire()).isEqualTo("Harry Cover");
+    }
+}
+
+						</code></pre>
+					</section>
+				</section>
+
+
+				<section>
+					<h3>Make it right</h3>
+				</section>
+
 				<section>
 					<p>Par où commencer ? </br> The Boy Scout Rule !</p>
 				</section>
@@ -289,8 +337,6 @@ public class AgrégateurDeDonnéesTest {
 					<ul>
 						<li><a href="http://blog.cleancoder.com/">Robert C. Martin (Uncle Bob) - The Clean Bode blog</a></li>
 						<li><a href="https://groups.yahoo.com/neo/groups/extremeprogramming/conversations/topics/111829">Bonnes pratiques de test unitaire par Michael Feathers</a></li>
-						<li>Or here</li>
-						<li>Or here</li>
 					</ul>
 				</section>	
 
