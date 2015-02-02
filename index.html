@@ -284,16 +284,9 @@ public class AgrégateurDeDonnéesTest {
 					<section>
 						<p>Le test</p>
 						<pre><code data-trim contenteditable class="java">
-public class AgrégateurDeDonnéesTest {
+public class Test {
     @Test
-    public void ceciEstUnTestAutoValidant(){
-        String idCompte = "1230948";
-        DonnesBDD données = unJeuDeDonneesUtileACeTest(idCompte);
-
-        AgrégateurDeDonnées agrégateur = new AgrégateurDeDonnées();
-        Compte compte = agrégateur.traiterDonnées(données);
-
-        assertThat(compte.getTitulaire()).isEqualTo("Harry Cover");
+    public void doitRetournerQuelqueChose(){
     }
 }
 
@@ -302,32 +295,46 @@ public class AgrégateurDeDonnéesTest {
 					<section>
 						<p>L'implémentation</p>
 						<pre><code data-trim contenteditable class="java">
-public class AgrégateurDeDonnéesTest {
+public class Implémentation {
+
+    public void quelqueChose(){
+    }
+}
+						</code></pre>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h3>Make it right</h3>
+					</section>
+					<section>
+						<p>Le test</p>
+						<pre><code data-trim contenteditable class="java">
+public class Test {
     @Test
-    public void ceciEstUnTestAutoValidant(){
-        String idCompte = "1230948";
-        DonnesBDD données = unJeuDeDonneesUtileACeTest(idCompte);
-
-        AgrégateurDeDonnées agrégateur = new AgrégateurDeDonnées();
-        Compte compte = agrégateur.traiterDonnées(données);
-
-        assertThat(compte.getTitulaire()).isEqualTo("Harry Cover");
+    public void doitRetournerQuelqueChose(){
     }
 }
 
 						</code></pre>
 					</section>
+					<section>
+						<p>L'implémentation</p>
+						<pre><code data-trim contenteditable class="java">
+public class Implémentation {
+
+    public void quelqueChose(){
+    }
+}
+						</code></pre>
+					</section>
 				</section>
-
-
-				<section>
-					<h3>Make it right</h3>
-				</section>
-
+				
 				<section>
 					<p>Par où commencer ? </br> The Boy Scout Rule !</p>
 					<blockquote cite="the Boy Scout Rule">
-						&ldquo;Il faut laisser le code plus propre que quand on l'a trouvé.&rdquo; </br>
+						&ldquo;Il faut laisser l'endroit plus propre qu'on ne l'a trouvé.&rdquo; </br>
 					</blockquote>
 					<i> Robert C. Martin </i>
 				</section>
