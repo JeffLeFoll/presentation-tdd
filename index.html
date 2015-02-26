@@ -218,9 +218,9 @@ public class AgrégateurDeDonnéesTest {
 						<h3>Opportun</h3>
 						<p>
 							Les tests doivent être écrit juste avant le code de production qui les fait passer. </br>
-							Autrement, vous trouverez que le code sera difficile à tester, voir trop dur à tester et que vous perdez votre temps. </br>
+							Autrement, vous trouverez que le code sera difficile à tester et que vous perdez votre temps. </br>
 							Votre code ne sera pas conçut pour être testable. </br>
-							De plus écrire les tests après le code est souvent moins fun, plus frustrant et moins productif que des les écrire juste avant.  </br>
+							De plus écrire les tests après le code est souvent moins fun, plus frustrant et moins productif que de les écrire juste avant.  </br>
 						</p>
 					</section>
 				</section>
@@ -232,10 +232,6 @@ public class AgrégateurDeDonnéesTest {
 						Les tests sont tout aussi important que le code de production car ils en assurent sa flexibilité, sa maintenabilité et sa réutilisabilité. </br>
 					</p>
 					</br>
-					<blockquote cite="Uncle bob : Clean Code">
-						&ldquo;Si vous laissez pourrir vos tests, alors votre code pourrira aussi. Gardez vos tests propre.&rdquo; </br>
-					</blockquote>
-						<i> Robert C. Martin - Clean Code </i>
 				</section>
 
 				<section>
@@ -261,7 +257,7 @@ public class AgrégateurDeDonnéesTest {
 						Et avec un peut de hauteur ? </br>
 						<img src="./images/red_green_refactor.jpg" alt="Red => Green => Refacto">
 						<p align="left">
-							1) Créer un test en échec </br>
+							1) Écrire un test en échec </br>
 							2) Écrire le code de production qui le fait passer </br>
 							3) Nettoyer le bordel que l'on viens de faire :) </br>
 						</p>
@@ -280,24 +276,30 @@ public class AgrégateurDeDonnéesTest {
 				<section>
 					<section>
 						<h3>Make it work</h3>
-					</section>
-					<section>
 						<p>Le test</p>
 						<pre><code data-trim contenteditable class="java">
-public class Test {
+public class DateUtilitaireTest {
     @Test
-    public void doitRetournerQuelqueChose(){
+    public void doitDeterminerLeDernierJourDuMois(){
+    	// Arrange
+        String dateCourente = "2015-02-13";
+
+        // Act
+        String résultat = DateUtilitaire.dernierJourDuMois(dateCourente);
+
+        // Assert
+        assertThat(résultat).isEqualTo("2015-02-28");
     }
 }
-
 						</code></pre>
 					</section>
 					<section>
 						<p>L'implémentation</p>
 						<pre><code data-trim contenteditable class="java">
-public class Implémentation {
+public class DateUtilitaire {
 
-    public void quelqueChose(){
+    public static String dernierJourDuMois(String dateCourente) {
+        return "2015-02-28";
     }
 }
 						</code></pre>
@@ -307,24 +309,15 @@ public class Implémentation {
 				<section>
 					<section>
 						<h3>Make it right</h3>
-					</section>
-					<section>
-						<p>Le test</p>
-						<pre><code data-trim contenteditable class="java">
-public class Test {
-    @Test
-    public void doitRetournerQuelqueChose(){
-    }
-}
-
-						</code></pre>
-					</section>
-					<section>
 						<p>L'implémentation</p>
 						<pre><code data-trim contenteditable class="java">
-public class Implémentation {
+public class DateUtilitaire {
+    public static String dernierJourDuMois(String dateCourente) {
+        DateTime date = DateTime.parse(dateCourente);
 
-    public void quelqueChose(){
+        DateTime dernierJourDuMois = date.dayOfMonth().withMaximumValue();
+
+        return dernierJourDuMois.toString("yyyy-MM-dd");
     }
 }
 						</code></pre>
@@ -332,22 +325,21 @@ public class Implémentation {
 				</section>
 				
 				<section>
-					<p>Par où commencer ? </br> The Boy Scout Rule !</p>
-					<blockquote cite="the Boy Scout Rule">
-						&ldquo;Il faut laisser l'endroit plus propre qu'on ne l'a trouvé.&rdquo; </br>
-					</blockquote>
-					<i> Robert C. Martin </i>
-				</section>
+					<img src="./images/question-chat.jpg" alt="Des Questions ?">
+				</section>	
 
 				<section>
-					<img src="./images/question-chat.jpg" alt="Des Questions ?">
+					<p>Et maintenant ?</p>
+					<img src="./images/noidea.jpg" alt="Et maintenant ?">
+					<p>Ouverture du Coding Dojo !</p>
 				</section>	
 
 				<section>
 					<h3>Ressources</h3>
 					<ul>
-						<li><a href="http://blog.cleancoder.com/">Robert C. Martin (Uncle Bob) - The Clean Bode blog</a></li>
+						<li><a href="http://www.jamesshore.com/Agile-Book/test_driven_development.html">Le TDD en détail par James Shore</a></li>
 						<li><a href="https://groups.yahoo.com/neo/groups/extremeprogramming/conversations/topics/111829">Bonnes pratiques de test unitaire par Michael Feathers</a></li>
+						<li><a href="http://blog.cleancoder.com/">Robert C. Martin (Uncle Bob) - The Clean Bode blog</a></li>
 						<li><a href="http://c2.com/cgi/wiki?ArrangeActAssert">Pattern Arrange-Act-Assert</a></li>
 					</ul>
 				</section>	
