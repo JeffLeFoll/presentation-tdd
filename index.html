@@ -280,7 +280,7 @@ public class AgrégateurDeDonnéesTest {
 						<pre><code data-trim contenteditable class="java">
 public class DateUtilitaireTest {
     @Test
-    public void doitDeterminerLeDernierJourDuMois(){
+    public void determinerLeDernierJourDeFevrier(){
     	// Arrange
         String dateCourente = "2015-02-13";
 
@@ -309,6 +309,25 @@ public class DateUtilitaire {
 				<section>
 					<section>
 						<h3>Make it right</h3>
+						<p>Le test</p>
+						<pre><code data-trim contenteditable class="java">
+public class DateUtilitaireTest {
+    @Test
+    public void determinerLeDernierJourDeMars(){
+    	// Arrange
+        String dateCourente = "2015-03-22";
+
+        // Act
+        String résultat = DateUtilitaire.dernierJourDuMois(dateCourente);
+
+        // Assert
+        assertThat(résultat).isEqualTo("2015-03-31");
+    }
+}
+						</code></pre>
+					</section>
+					<section>
+
 						<p>L'implémentation</p>
 						<pre><code data-trim contenteditable class="java">
 public class DateUtilitaire {
