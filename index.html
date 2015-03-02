@@ -53,7 +53,7 @@
 					<section>
 						<h2>Définition d'un bon test unitaire (James Shore)</h2>
 						<p class="fragment">S’exécute rapidement</p>
-						<p class="fragment">Fournis une ceinture de sécurité pour le refactoring</p>
+						<p class="fragment">Fournit une ceinture de sécurité pour le refactoring</p>
 						<p class="fragment">Documente le but du code (c'est une spec)</p>
 						<p class="fragment">Alerte l'équipe des régressions</p>
 					</section>
@@ -217,9 +217,9 @@ public class AgrégateurDeDonnéesTest {
 					<section>
 						<h3>Opportun</h3>
 						<p>
-							Les tests doivent être écrit juste avant le code de production qui les fait passer. </br>
+							Les tests doivent être écrits juste avant le code de production qui les fait passer. </br>
 							Autrement, vous trouverez que le code sera difficile à tester et que vous perdez votre temps. </br>
-							Votre code ne sera pas conçut pour être testable. </br>
+							Votre code ne sera pas conçu pour être testable. </br>
 							De plus écrire les tests après le code est souvent moins fun, plus frustrant et moins productif que de les écrire juste avant.  </br>
 						</p>
 					</section>
@@ -227,9 +227,9 @@ public class AgrégateurDeDonnéesTest {
 
 				<section>
 					<p>
-						Des tests écrit avant le code de production sont des <b><u>Spécifications par l’exemple</u></b> car ils doivent tester le comportement du code et non pas sont implémentation. </br></br>
-						Ils vont permettre à tous le monde de comprendre rapidement le but du code. </br></br>
-						Les tests sont tout aussi important que le code de production car ils en assurent sa flexibilité, sa maintenabilité et sa réutilisabilité. </br>
+						Des tests écrits avant le code de production sont des <b><u>Spécifications par l’exemple</u></b> car ils doivent tester le comportement du code et non pas son implémentation. </br></br>
+						Ils vont permettre à tout le monde de comprendre rapidement le but du code. </br></br>
+						Les tests sont tout aussi importants que le code de production car ils en assurent sa flexibilité, sa maintenabilité et sa réutilisabilité. </br>
 					</p>
 					</br>
 				</section>
@@ -250,16 +250,19 @@ public class AgrégateurDeDonnéesTest {
 						&ldquo;Vous ne pouvez pas écrire plus de code de production qu'il ne faut pour faire passer avec succes le test.&rdquo; </br>
 					</blockquote>
 					<a href="http://programmer.97things.oreilly.com/wiki/index.php/The_Three_Laws_of_Test-Driven_Development">Les 3 lois du TDD.</a>
+					<aside class="notes">
+						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
+					</aside>
 				</section>
 
 				<section>
 					<p align="center">
-						Et avec un peut de hauteur ? </br>
+						Et avec un peu de hauteur ? </br>
 						<img src="./images/red_green_refactor.jpg" alt="Red => Green => Refacto">
 						<p align="left">
 							1) Écrire un test en échec </br>
 							2) Écrire le code de production qui le fait passer </br>
-							3) Nettoyer le bordel que l'on viens de faire :) </br>
+							3) Nettoyer le bordel que l'on vient de faire :) </br>
 						</p>
 					</p>
 
@@ -282,10 +285,10 @@ public class DateUtilitaireTest {
     @Test
     public void determinerLeDernierJourDeFevrier(){
     	// Arrange
-        String dateCourente = "2015-02-13";
+        String dateCourante = "2015-02-13";
 
         // Act
-        String résultat = DateUtilitaire.dernierJourDuMois(dateCourente);
+        String résultat = DateUtilitaire.dernierJourDuMois(dateCourante);
 
         // Assert
         assertThat(résultat).isEqualTo("2015-02-28");
@@ -298,7 +301,7 @@ public class DateUtilitaireTest {
 						<pre><code data-trim contenteditable class="java">
 public class DateUtilitaire {
 
-    public static String dernierJourDuMois(String dateCourente) {
+    public static String dernierJourDuMois(String dateCourante) {
         return "2015-02-28";
     }
 }
@@ -315,10 +318,10 @@ public class DateUtilitaireTest {
     @Test
     public void determinerLeDernierJourDeMars(){
     	// Arrange
-        String dateCourente = "2015-03-22";
+        String dateCourante = "2015-03-22";
 
         // Act
-        String résultat = DateUtilitaire.dernierJourDuMois(dateCourente);
+        String résultat = DateUtilitaire.dernierJourDuMois(dateCourante);
 
         // Assert
         assertThat(résultat).isEqualTo("2015-03-31");
@@ -331,8 +334,8 @@ public class DateUtilitaireTest {
 						<p>L'implémentation</p>
 						<pre><code data-trim contenteditable class="java">
 public class DateUtilitaire {
-    public static String dernierJourDuMois(String dateCourente) {
-        DateTime date = DateTime.parse(dateCourente);
+    public static String dernierJourDuMois(String dateCourante) {
+        DateTime date = DateTime.parse(dateCourante);
 
         DateTime dernierJourDuMois = date.dayOfMonth().withMaximumValue();
 
