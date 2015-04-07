@@ -61,8 +61,105 @@
 				</section>
 
 				<section>
+					<h2>Une règle à suivre : F.I.R.S.T</h2>
+					<p>
+					<ul>
+						<li>Fast</li>
+						<li>Independant</li>
+						<li>Repeatable</li>
+						<li>Self-validating</li>
+						<li>Timely</li>
+					</ul>
+					</p>
+					<br>
+					<p>
+						<small><a href="#/13">Exemples concrets</a></small>
+					</p>
+				</section>
+
+				<section>
+					<h2>Le TDD ?</h2>
+					<p>Une discipline qui permet de faire émerger le design et l'implémentation du code en utilisant les tests unitaires.</p>
+					<p>
+						<a href="http://programmer.97things.oreilly.com/wiki/index.php/The_Three_Laws_of_Test-Driven_Development">Il y a 3 règles simples :</a>
+					</p>
+				</section>
+				
+				<section>
+					<blockquote cite="http://programmer.97things.oreilly.com/wiki/index.php/The_Three_Laws_of_Test-Driven_Development">
+						&ldquo;Ne pas écrire de code de production si ce n'est pour faire passer un test qui échoue.&rdquo;
+					</blockquote>
+				</section>
+				
+				<section>
+					<blockquote cite="http://programmer.97things.oreilly.com/wiki/index.php/The_Three_Laws_of_Test-Driven_Development">
+						&ldquo;Ne pas écrire plus de ligne de test qu'il ne faut pour échouer. Ne pas compiler est échouer.&rdquo;
+					</blockquote>
+				</section>
+				
+				<section>
+					<blockquote cite="http://programmer.97things.oreilly.com/wiki/index.php/The_Three_Laws_of_Test-Driven_Development">
+						&ldquo;Ne pas écrire plus de code de production qu'il ne faut pour faire passer avec succès le test.&rdquo;
+					</blockquote>
+				</section>
+
+				<section>
+					<p align="center">
+						Le Mantra du TDD <br>
+						<img src="./images/red_green_refactor.jpg" alt="Red => Green => Refacto">
+					</p>
+				</section>
+
+				<section>
+					<p>Le Refactoring, étape obligatoire :</p>
+					<br>
+					<blockquote>
+						Le refactoring, est l'art de modifier la structure du code sans en altérer le fonctionnement.
+					</blockquote>
+					<br>
+					<p> Commencer par éliminer les duplications !</p>
+				</section>
+				
+				<section>
+					<p>Et maintenant ?</p>
+					<img src="./images/noidea.jpg" alt="Et maintenant ?">
+					<p>Un peut de code !</p>
+				</section>	
+
+				<section>
+					<p>Le grand classique du TDD : Le jeu du FizzBuzz</p>
+					<br>
+					<p>
+						Écrire un programme qui afficher les entiers de 0 à 100. <br>
+						Pour les multiples de 3 remplacer le nombre par fizz. <br>
+						Pour les multiples de 5 remplacer le nombre par buzz. <br>
+						Pour les multiples de 3 et 5 remplacer le nombre par fizzbuzz.
+					</p>
+				</section>
+
+				<section>
+					<p>
+						Pour aller plus loin ? <br>
+						Pourquoi ne pas mettre en place un coding dojo ?
+					</p>
+				</section>	
+
+				<section>
+					<h3>Ressources</h3>
+					<ul>
+						<li><a href="http://www.jamesshore.com/Agile-Book/test_driven_development.html" target="_blank">Le TDD en détail par James Shore</a></li>
+						<li><a href="http://www.jamesshore.com/Agile-Book/refactoring.html" target="_blank">Le refactoring par James Shore</a></li>
+						<li><a href="https://groups.yahoo.com/neo/groups/extremeprogramming/conversations/topics/111829" target="_blank">Bonnes pratiques de test unitaire par Michael Feathers</a></li>
+						<li><a href="http://blog.cleancoder.com/" target="_blank">Robert C. Martin (Uncle Bob) - The Clean Bode blog</a></li>
+						<li><a href="http://c2.com/cgi/wiki?ArrangeActAssert" target="_blank">Test unitaire: Le pattern Arrange-Act-Assert</a></li>
+						<li>TDD by example de Kent Beck. ISBN: 978-0-321-14653-3</li>
+					</ul>
+				</section>	
+
+
+				<section>
 					<section>
-						<h2>Une règle à suivre : F.I.R.S.T</h2>
+						<h2>Illustration de la règle F.I.R.S.T</h2>
 						<ul>
 							<li>Fast</li>
 							<li>Independant</li>
@@ -213,85 +310,6 @@ private DonnesBDD unJeuDeDonneesUtileACeTest(String idCompte) {
 						</p>
 					</section>
 				</section>
-
-				<section>
-					<h2>Le TDD ?</h2>
-					<p>Une discipline qui permet de faire émerger le design et l'implémentation du code en utilisant les tests unitaires.</p>
-					<p>
-						<a href="http://programmer.97things.oreilly.com/wiki/index.php/The_Three_Laws_of_Test-Driven_Development">Il y a 3 règles simples :</a>
-					</p>
-				</section>
-				
-				<section>
-					<blockquote cite="http://programmer.97things.oreilly.com/wiki/index.php/The_Three_Laws_of_Test-Driven_Development">
-						&ldquo;Ne pas écrire de code de production si ce n'est pour faire passer un test qui échoue.&rdquo;
-					</blockquote>
-				</section>
-				
-				<section>
-					<blockquote cite="http://programmer.97things.oreilly.com/wiki/index.php/The_Three_Laws_of_Test-Driven_Development">
-						&ldquo;Ne pas écrire plus de ligne de test qu'il ne faut pour échouer. Ne pas compiler est échouer.&rdquo;
-					</blockquote>
-				</section>
-				
-				<section>
-					<blockquote cite="http://programmer.97things.oreilly.com/wiki/index.php/The_Three_Laws_of_Test-Driven_Development">
-						&ldquo;Ne pas écrire plus de code de production qu'il ne faut pour faire passer avec succès le test.&rdquo;
-					</blockquote>
-				</section>
-
-				<section>
-					<p align="center">
-						Le Mantra du TDD <br>
-						<img src="./images/red_green_refactor.jpg" alt="Red => Green => Refacto">
-					</p>
-				</section>
-
-				<section>
-					<p>Le Refactoring, étape obligatoire :</p>
-					<br>
-					<blockquote>
-						Le refactoring, est l'art de modifier la structure du code sans en altérer le fonctionnement.
-					</blockquote>
-					<br>
-					<p> Commencer par éliminer les duplications !</p>
-				</section>
-				
-				<section>
-					<p>Et maintenant ?</p>
-					<img src="./images/noidea.jpg" alt="Et maintenant ?">
-					<p>Un peut de code !</p>
-				</section>	
-
-				<section>
-					<p>Le grand classique du TDD : Le jeu du FizzBuzz</p>
-					<br>
-					<p>
-						Écrire un programme qui afficher les entiers de 0 à 100. <br>
-						Pour les multiples de 3 remplacer le nombre par fizz. <br>
-						Pour les multiples de 5 remplacer le nombre par buzz. <br>
-						Pour les multiples de 3 et 5 remplacer le nombre par fizzbuzz.
-					</p>
-				</section>
-
-				<section>
-					<p>
-						Pour aller plus loin ? <br>
-						Pourquoi ne pas mettre en place un coding dojo ?
-					</p>
-				</section>	
-
-				<section>
-					<h3>Ressources</h3>
-					<ul>
-						<li><a href="http://www.jamesshore.com/Agile-Book/test_driven_development.html" target="_blank">Le TDD en détail par James Shore</a></li>
-						<li><a href="http://www.jamesshore.com/Agile-Book/refactoring.html" target="_blank">Le refactoring par James Shore</a></li>
-						<li><a href="https://groups.yahoo.com/neo/groups/extremeprogramming/conversations/topics/111829" target="_blank">Bonnes pratiques de test unitaire par Michael Feathers</a></li>
-						<li><a href="http://blog.cleancoder.com/" target="_blank">Robert C. Martin (Uncle Bob) - The Clean Bode blog</a></li>
-						<li><a href="http://c2.com/cgi/wiki?ArrangeActAssert" target="_blank">Test unitaire: Le pattern Arrange-Act-Assert</a></li>
-						<li>TDD by example de Kent Beck. ISBN: 978-0-321-14653-3</li>
-					</ul>
-				</section>	
 
 				<section>
 					<p>
