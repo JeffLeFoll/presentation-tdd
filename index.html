@@ -51,13 +51,11 @@
 				</section>
 
 				<section>
-					<h2>Définition d'un bon test unitaire (James Shore)</h2>
-					<ul>
-						<li>S’exécute rapidement</li>
-						<li>Fournit une ceinture de sécurité pour le refactoring</li>
-						<li>Documente le but du code (<b><u>Spécifications par l’exemple</u></b>)</li>
-						<li>Alerte l'équipe des régressions</li>
-					</ul>
+					<h2>L'objectif ?</h2>
+					<img src="./images/beck_tdd.jpg" alt="DD by example">
+					<p class="fragment">Du code propre, qui fonctionne ...</p>
+					<p class="fragment">... <b>maintenant</b></p>
+
 				</section>
 
 				<section>
@@ -162,160 +160,6 @@
 					</ul>
 				</section>	
 
-
-				<section>
-					<section>
-						<h2>Illustration de la règle F.I.R.S.T</h2>
-						<ul>
-							<li>Fast</li>
-							<li>Independant</li>
-							<li>Repeatable</li>
-							<li>Self-validating</li>
-							<li>Timely</li>
-						</ul>
-					</section>
-
-					<section>
-						<h3>Rapide</h3>
-						<pre><code data-trim contenteditable class="java">
-@Test
-public void ceciEstUnTestQuiNEstPasFast(){
-	SQLAccèsDonnésDAO accèsDonnées = new SQLAccèsDonnésDAO();
-	String idCompte = "1230948";
-	DonnesBDD donnéesFichier = accèsDonnées.récupérerDonnées(idCompte);
-	AgrégateurDeDonnées agrégateur = new AgrégateurDeDonnées();
-
-	Compte compte = agrégateur.traiterDonnées(donnéesFichier);
-
-	System.out.println(compte.getTitulaire());
-}
-						</code></pre>
-						<pre><code data-trim contenteditable class="java">
-@Test
-public void ceciEstUnTestFast(){
-	String idCompte = "1230948";
-	DonnesBDD données = unJeuDeDonneesUtileACeTest(idCompte);
-	AgrégateurDeDonnées agrégateur = new AgrégateurDeDonnées();
-
-	Compte compte = agrégateur.traiterDonnées(données);
-
-	assertThat(compte.getTitulaire()).isEqualTo("Harry Cover");
-}
-
-private DonnesBDD unJeuDeDonneesUtileACeTest(String idCompte) {
-	DonnesBDD données = new DonnesBDD(idCompte);
-	données.setNom("Cover");
-	données.setPrenom("Harry");
-	return données;
-}
-						</code></pre>
-					</section>
-
-					<section>
-						<h3>Indépendant</h3>
-						<pre><code data-trim contenteditable class="java">
-@Test
-public void ceciEstUnTestQuiNEstPasIndependant(){
-	Compte compte = new Compte();
-
-	compte.ajouter(1000);
-
-	assertThat(compte.getSolde()).isEqualTo(1500);
-
-	compte.setCotitulaire("John Doe");
-
-	assertThat(compte.aUnCotitulaire()).isTrue();
-}
-						</code></pre>
-						<pre><code data-trim contenteditable class="java">
-@Test
-public void ceciEstUnTestIndependantSurLeSolde() {
-	Compte compte = new Compte();
-        
-	compte.ajouter(1000);
-        
-	assertThat(compte.getSolde()).isEqualTo(1500);
-}
-@Test 
-public void ceciEstUnTestIndependantSurLeCotitulaire(){
-	Compte compte = new Compte();
-        
-	compte.setCotitulaire("John Doe");
-        
-	assertThat(compte.aUnCotitulaire()).isTrue();
-}						
-						</code></pre>
-					</section>
-
-					<section>
-						<h3>Répétable</h3>
-						<pre><code data-trim contenteditable class="java">							
-@Test
-public void ceciEstUnTestNonRépétable(){
-   Compte compte = new Compte();
-
-   compte.setDateOuverture(new Date());
-
-   assertThat(compte.getDateOuverture()).isEqualTo(new Date());
-}
-						</code></pre>
-						<pre><code data-trim contenteditable class="java">
-@Test
-public void ceciEstUnTestRépétable(){ 
-   String format = "yyyy-MM-dd";  
-   String date = "2015-01-25";
-   Compte compte = new Compte();
-   
-   compte.setDateOuverture(DateTime.parse(date));
-
-   assertThat(compte.getDateOuverture().toString(format)).isEqualTo(date);
-}				
-						</code></pre>
-					</section>
-
-					<section>
-						<h3>Auto-Validant</h3>
-						<pre><code data-trim contenteditable class="java">
-@Test
-public void ceciEstUnTestQuiNEstPasAutoValidant(){
-	SQLAccèsDonnésDAO accèsDonnées = new SQLAccèsDonnésDAO();
-	String idCompte = "1230948";
-	DonnesBDD donnéesFichier = accèsDonnées.récupérerDonnées(idCompte);
-	AgrégateurDeDonnées agrégateur = new AgrégateurDeDonnées();
-
-	Compte compte = agrégateur.traiterDonnées(donnéesFichier);
-
-	System.out.println(compte.getTitulaire());
-}
-						</code></pre>
-						<pre><code data-trim contenteditable class="java">
-@Test
-public void ceciEstUnTestAutoValidant(){
-	String idCompte = "1230948";
-	DonnesBDD données = unJeuDeDonneesUtileACeTest(idCompte);
-	AgrégateurDeDonnées agrégateur = new AgrégateurDeDonnées();
-
-	Compte compte = agrégateur.traiterDonnées(données);
-
-	assertThat(compte.getTitulaire()).isEqualTo("Harry Cover");}
-
-private DonnesBDD unJeuDeDonneesUtileACeTest(String idCompte) {
-	DonnesBDD données = new DonnesBDD(idCompte);
-	données.setNom("Cover");
-	données.setPrenom("Harry");
-	return données;
-}
-						</code></pre>
-					</section>
-
-					<section>
-						<h3>Opportun</h3>
-						<p>
-							Les tests doivent être écrits juste avant le code de production qui les fait passer. <br>
-							Autrement, vous trouverez que le code sera difficile à tester et que vous perdez votre temps. <br>
-						</p>
-					</section>
-				</section>
 
 				<section>
 					<p>
