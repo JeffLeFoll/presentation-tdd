@@ -55,8 +55,8 @@
 				<section>
 					<h2>L'objectif ?</h2>
 					<img src="./images/beck_tdd.jpg" alt="DD by example">
-					<p class="fragment">Du code propre, qui fonctionne ...</p>
-					<p class="fragment">... <b>maintenant</b></p>
+					<p class="fragment">Du code propre, qui fonctionne</p>
+					<p class="fragment"><b>maintenant</b></p>
 
 				</section>
 
@@ -194,6 +194,7 @@
 					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/remotes/remotes.js', async: true },
 					{ src: 'plugin/zoom-js/zoom.js', async: true },
 					{ src: 'plugin/notes/notes.js', async: true }
 				]
