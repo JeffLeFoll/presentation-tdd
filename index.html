@@ -42,46 +42,28 @@
 			<div class="slides">
 
 				<section>
-					<h2>TDD - Test Driven Development</h2>
+					<h2>Introduction au Test Driven Development</h2>
 					<p>
 						<small> <a href="http://jefflefoll.github.io" target="_blank">Jean-François Le Foll</a> / <a href="http://twitter.com/JeffLeFoll">@JeffLeFoll</a></small>
-					</p>
-					<br>
-					<aside class="notes">
-				        Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-				    </aside>
-				</section>
-
-				<section>
-					<h2>L'objectif ?</h2>
-					<img src="./images/beck_tdd.jpg" alt="DD by example">
-					<p class="fragment">Du code propre, qui fonctionne</p>
-					<p class="fragment"><b>maintenant</b></p>
-
-				</section>
-
-				<section>
-					<h2>Une règle à suivre : F.I.R.S.T</h2>
-					<p>
-					<ul>
-						<li>Fast</li>
-						<li>Independant</li>
-						<li>Repeatable</li>
-						<li>Self-validating</li>
-						<li>Timely</li>
-					</ul>
-					</p>
-					<br>
-					<p>
-						<small><a href="#/13">Exemples concrets</a></small>
 					</p>
 				</section>
 
 				<section>
 					<h2>Le TDD ?</h2>
-					<p>Une discipline qui permet de faire émerger le design et l'implémentation du code en utilisant les tests unitaires.</p>
+					<img src="./images/beck_tdd.jpg" alt="TDD by example">
+				</section>
+
+				<section>
+					<h2>L'objectif ?</h2>
+					
+					<span class="fragment" style="color: #2976db;">Du code propre qui fonctionne</span><span class="fragment" style="font-weight:bold; color: #2976db;"> - maintenant.</span>
+
+				</section>
+
+				<section>
+					<h2>Comment ?</h2>
 					<p>
-						<a href="http://programmer.97things.oreilly.com/wiki/index.php/The_Three_Laws_of_Test-Driven_Development">Il y a 3 règles simples :</a>
+						Il y a 3 règles simples:
 					</p>
 				</section>
 				
@@ -104,6 +86,20 @@
 				</section>
 
 				<section>
+					<h2>Une règle :</h2>
+					<h2>F.I.R.S.T</h2>
+					<p>
+					<ul>
+						<li>Fast</li>
+						<li>Independant</li>
+						<li>Repeatable</li>
+						<li>Self-validating</li>
+						<li>Timely</li>
+					</ul>
+					</p>
+				</section>
+
+				<section>
 					<p align="center">
 						Le Mantra du TDD <br>
 						<img src="./images/red_green_refactor.jpg" alt="Red => Green => Refacto">
@@ -111,13 +107,7 @@
 				</section>
 
 				<section>
-					<p>Le Refactoring, étape obligatoire :</p>
-					<br>
-					<blockquote>
-						Le refactoring, est l'art de modifier la structure du code sans en altérer le fonctionnement.
-					</blockquote>
-					<br>
-					<p> Commencer par éliminer les duplications !</p>
+					<p>Le refactoring, <span style="font-weight:bold; color: red;">étape obligatoire</span> :</p>
 				</section>
 				
 				<section>
@@ -130,44 +120,34 @@
 					<p>Le grand classique du TDD : Le jeu du FizzBuzz</p>
 					<br>
 					<p>
-						Écrire un programme qui afficher les entiers de 0 à 100. <br>
-						Pour les multiples de 3 remplacer le nombre par fizz. <br>
-						Pour les multiples de 5 remplacer le nombre par buzz. <br>
-						Pour les multiples de 3 et 5 remplacer le nombre par fizzbuzz.
+						Écrire un programme qui affiche les entiers de 0 à 100. <br>
+						<ul>
+						<li>Pour les multiples de 3 remplacer le nombre par fizz.</li>
+						<li>Pour les multiples de 5 remplacer le nombre par buzz.</li>
+						<li>Pour les multiples de 3 et 5 remplacer le nombre par fizzbuzz.</li>
+						</ul>
 					</p>
 				</section>
 
 				<section>
 					<p>
-						Pour aller plus loin ? <br>
-						Pourquoi ne pas mettre en place un coding dojo ?
-					</p>
-					<br>
-					<p>
-						Il s'agit d'un lieu sûr (un lieu où l'on peut échouer pour apprendre sans être jugé), où les développeurs peuvent expérimenter, tester, apprendre en dehors du cadre d'un projet.
-						On y participe par envie, pour améliorer ses compétences et apprendre en s'amusant.
-					</p>		
+						Et maintenant ?
+					</p>	
 				</section>	
 
 				<section>
 					<h3>Ressources</h3>
 					<ul>
+						<li><a href="http://programmer.97things.oreilly.com/wiki/index.php/The_Three_Laws_of_Test-Driven_Development">Les 3 règles du TDD</a></li>
 						<li><a href="http://www.jamesshore.com/Agile-Book/test_driven_development.html" target="_blank">Le TDD en détail par James Shore</a></li>
 						<li><a href="http://www.jamesshore.com/Agile-Book/refactoring.html" target="_blank">Le refactoring par James Shore</a></li>
 						<li><a href="https://groups.yahoo.com/neo/groups/extremeprogramming/conversations/topics/111829" target="_blank">Bonnes pratiques de test unitaire par Michael Feathers</a></li>
-						<li><a href="http://blog.cleancoder.com/" target="_blank">Robert C. Martin (Uncle Bob) - The Clean Bode blog</a></li>
 						<li><a href="http://c2.com/cgi/wiki?ArrangeActAssert" target="_blank">Test unitaire: Le pattern Arrange-Act-Assert</a></li>
-						<li>TDD by example de Kent Beck. ISBN: 978-0-321-14653-3</li>
-						<li><a href="http://codingdojo.org" target="_blank">CodingDojo.org</a></li>	
+						<li><a href="http://blog.cleancoder.com/" target="_blank">Robert C. Martin (Uncle Bob) - The Clean Bode blog</a></li>
+						<li>Le livre "TDD by example" de Kent Beck. ISBN: 978-0-321-14653-3</li>
+						<li><a href="http://codingdojo.org" target="_blank">CodingDojo.org et sa bibliothèque de kata</a></li>	
 					</ul>
 				</section>	
-
-
-				<section>
-					<p>
-						 Présentation sous licence <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr" target="_blank">CC BY-NC-SA 4.0</a>.
-					</p>
-				</section>
 
 			</div>
 
@@ -194,7 +174,6 @@
 					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/remotes/remotes.js', async: true },
 					{ src: 'plugin/zoom-js/zoom.js', async: true },
 					{ src: 'plugin/notes/notes.js', async: true }
 				]
